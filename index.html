@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script type="module" src="index.js"></script>
+    <link rel="stylesheet" href="index.css">
+    <title>Calculator</title>
+  </head>
+  <body>
+    <div id="conteiner">
+      <form action="" id="select-form" class="selectors-form">
+
+        <div class="selector-form">
+          <label for="storage-select" class="selector-form__label">
+            <span>Storage: </span>
+            <span class="selector-form__price">100 GB</span>
+          </label>
+          <div class="selector-form__input-wrapper">
+            <input type="range" name="storageVolume" id="storage-select" class="selector-form__input" min="0" max="1000" step="1" value="100">
+          </div>
+        </div>
+
+        <div class="selector-form">
+          <label for="storage-select" class="selector-form__label">
+            <span>Transfer: </span>
+            <span class="selector-form__price">400 GB</span>
+          </label>
+          <div class="selector-form__input-wrapper">
+            <input type="range" name="transferVolume" form="select-form" id="transfer-select" class="selector-form__input" min="0" max="1000" step="1" value="400">
+          </div>
+        </div>
+
+      </form>
+      <br>
+        <div class="output">
+          
+          <div class="bar-conteiner">
+            <div class="bar__wrapper">
+              <div class="bar__volume" data-provider= "backblaze"  data-color="#e41e2a"></div>
+              <div class="bar__value" data-provider= "backblaze"></div>
+            </div>
+
+            <div class="bar__legend">
+              <div class="legend__name"> 
+                <span>backblaze</span> 
+              </div>
+              <div class="legend__icon-wrapper">
+                <img src="./src/img/logo-backblaze.png" alt="backblaze" class="legend__icon">
+              </div>
+            </div>
+          </div>
+          
+          <div class="bar-conteiner">
+            <div class="bar__wrapper">
+              <div class="bar__volume" data-provider= "bunny"  data-color="#ec4d23"></div>
+              <div class="bar__value" data-provider= "bunny"></div>
+            </div>
+
+            <div class="bar__legend">
+              <div class="legend__name"> 
+                <span>bunny</span> 
+                <div class="legend__type-selector-wrapper">
+                  <input type="radio" name="bunny" value="hdd" id="hdd" form="select-form" class="legend__type-selector" checked>
+                  <label for="hdd" class="legend__type-selector-label">HDD</label>
+                  <input type="radio" name="bunny" value="ssd" id="ssd" form="select-form" class="legend__type-selector">
+                  <label for="ssd" class="legend__type-selector-label">SSD</label>
+                </div>
+              </div>
+              <div class="legend__icon-wrapper">
+                <img src="./src/img/logo-bunny.png" alt="bunny" class="legend__icon">
+              </div>
+            </div>
+
+          </div>
+          
+          <div class="bar-conteiner">
+            <div class="bar__wrapper">
+              <div class="bar__volume" data-provider= "scaleway"  data-color="#4f0599"></div>
+              <div class="bar__value" data-provider= "scaleway"></div>
+            </div>
+
+            <div class="bar__legend">
+              <div class="legend__name"> 
+                <span>scaleway</span> 
+                <div class="legend__type-selector-wrapper">
+                  <input type="radio" name="scaleway" value="multi" id="multi" form="select-form" class="legend__type-selector" checked>
+                  <label for="multi" class="legend__type-selector-label">Multi</label>
+                  <input type="radio" name="scaleway" value="single" id="single" form="select-form" class="legend__type-selector">
+                  <label for="single" class="legend__type-selector-label">Single</label>
+                </div>
+              </div>
+              <div class="legend__icon-wrapper">
+                <img src="./src/img/logo-scaleway.png" alt="" class="legend__icon">
+              </div>
+            </div>
+          </div>
+          
+          <div class="bar-conteiner">
+            <div class="bar__wrapper">
+              <div class="bar__volume" data-provider= "vultr"  data-color="#007bfc"></div>
+              <div class="bar__value" data-provider= "vultr"></div>
+            </div>
+
+            <div class="bar__legend">
+              <div class="legend__name"> 
+                <span>vultr</span> 
+              </div>
+              <div class="legend__icon-wrapper">
+                <img src="./src/img/logo-vultr.png" alt="" class="legend__icon">
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </div>
+  </body>
+</html>
+

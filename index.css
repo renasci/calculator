@@ -1,0 +1,261 @@
+
+.bar-conteiner {
+    display: flex;
+    max-width: 700px;
+    width: 100%;
+    flex-direction: row-reverse;
+}
+
+.bar__wrapper {
+    max-width: 300px;
+    width: 100%;
+    display: flex;
+    padding: 5px 0;
+    align-items: center;
+    flex-grow: 2;
+
+}
+
+.bar__value {
+    margin: 2px;
+}
+
+.bar__volume {
+    box-sizing: border-box;
+    border: 1px solid #000000;
+    background-color: #808080;
+    height: 16px;
+    max-width: 250px;
+    max-height: 250px;
+    background-color: attr(data-color);
+}
+
+.bar__legend {
+    min-width: 100px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-right: 3px solid #000000;
+    flex-grow: 2;
+    padding: 5px 0;
+}
+
+body {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+#conteiner {
+    padding: 5px;
+    width: 452px;
+    position: relative;
+    border: 1px solid #000000;
+    border-radius: 15px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+input[type="range"] {
+    appearance: none;
+    position: relative;
+    width: 100%;
+    height: 3px;
+    background-color: black;
+}
+
+input[type="range"]::before {
+    content: "";
+    display: block;
+    position: absolute;
+    transform: translateY(-50%);
+    top: 2px;
+    width: 3px;
+    height: 24px;
+    background: black;
+}
+
+input[type="range"]::after {
+    content: "";
+    display: block;
+    position: absolute;
+    margin-left: 100%;
+    transform: translateY(-50%);
+    top: 2px;
+    width: 3px;
+    height: 24px;
+    background: black;
+}
+
+input[type="range"]::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 7px;
+    height: 20px;
+    background: black;
+    cursor: pointer;
+}
+
+input[type="range"]::-moz-range-thumb {
+    appearance: none;
+    width: 7px;
+    height: 20px;
+    background: black;
+    cursor: pointer;
+}
+
+
+.selector-form__input-wrapper::before {
+    content: "0";
+    font-size: 0.6rem;
+    display: block;
+    position: absolute;
+    top: 100%;
+    transform: translate(15%, 60%);
+
+}
+
+.selector-form__input-wrapper::after {
+    content: "1000";
+    font-size: 0.6rem;
+    display: block;
+    position: absolute;
+    left: 100%;
+    transform: translate(-40%, 60%);
+
+}
+
+.selector-form__input-wrapper {
+    position: relative;
+}
+
+.selectors-form {
+    display: flex;
+    justify-content: space-around;
+}
+
+.selector-form {
+    display: flex;
+    flex-direction: column;
+    max-width: 200px;
+    margin: 15px 15px;
+
+}
+
+.selector-form__label {
+    display: flex;
+    justify-content: space-between;
+}
+
+.legend__icon-wrapper {
+    height: 15px;
+    border: 1px solid black;
+    display: flex;
+    justify-content: space-around;
+    margin: 0 3px;
+}
+
+.legend__icon {
+    width: 13px;
+    align-self: center;
+}
+
+.legend__type-selector {
+    display: none;
+}
+
+.legend__type-selector-label {
+    cursor: pointer;
+}
+
+.legend__type-selector-wrapper {
+    font-size: 0.5rem;
+}
+
+.legend__type-selector-label::before {
+    content: "";
+    display: inline-block;
+    margin-right: 1px;
+    width: 4px;
+    height: 4px;
+    border-radius: 50%;
+    border: 1px solid #000000;
+
+}
+
+.legend__type-selector:checked+label::before {
+    content: "";
+    background-color: #000000;
+}
+
+.output {
+    margin: 5px;
+}
+
+@media screen and (max-width: 500px) {
+    .bar-conteiner {
+        width: 50px;
+        display: block;
+    }
+
+    .bar__legend {
+        flex-direction: column-reverse;
+        font-size: 0.75rem;
+        min-width: initial;
+        border-right: none;
+        border-top: 3px solid #000000;
+    }
+
+    .bar__wrapper {
+        max-height: 300px;
+        height: 90%;
+        display: flex;
+        padding: 0;
+        flex-direction: column-reverse;
+    }
+
+    .bar__value {
+        transform: rotate(-90deg);
+        padding-left: 60%;
+        -webkit-transform: rotate(-90deg);
+        -moz-transform: rotate(-90deg);
+        -ms-transform: rotate(-90deg);
+        -o-transform: rotate(-90deg);
+    }
+
+    #conteiner {
+        flex-direction: column-reverse;
+        height: 525px;
+        width: initial;
+    }
+
+    .legend__name {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-items: center;
+    }
+
+    .legend__type-selector-wrapper {
+        font-size: 0.4rem;
+    }
+
+    .legend__type-selector-wrapper {
+        z-index: 1;
+    }
+
+    .selectors-form {
+        flex-direction: column;
+    }
+
+    .output {
+        display: flex;
+        flex-direction: row;
+        justify-items: flex-start;
+        height: 425px;
+    }
+}
